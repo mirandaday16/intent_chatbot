@@ -9,9 +9,9 @@ import random
 
 lemmatizer = WordNetLemmatizer()
 model = load_model('chatbot_model.h5')
-intents = json.loads(open('intents.json').read())
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+intents = json.loads(open('python-project-chatbot-codes/intents.json').read())
+words = pickle.load(open('python-project-chatbot-codes/words.pkl', 'rb'))
+classes = pickle.load(open('python-project-chatbot-codes/classes.pkl', 'rb'))
 
 
 # Clean up a sentence (tokenize and lemmatize) and return an array of words
