@@ -3,12 +3,8 @@ from nltk.stem import WordNetLemmatizer
 # nltk.download('wordnet')
 import json
 import pickle
-import tensorflow
 
 import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from keras.optimizers import SGD
 import random
 
 lemmatizer = WordNetLemmatizer()

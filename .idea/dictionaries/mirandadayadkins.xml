@@ -2,6 +2,7 @@
   <dictionary name="mirandadayadkins">
     <words>
       <w>lemmatize</w>
+      <w>softmax</w>
     </words>
   </dictionary>
 </component>
