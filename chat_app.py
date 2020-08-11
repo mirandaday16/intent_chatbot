@@ -85,6 +85,7 @@ def get_response_weather(sentence):
             location_name = word.text
     if len(location_name) < 1:
         response = "What city do you need the weather forecast for?"
+        # TODO: Figure out how to connect following user response
     else:
         response = get_weather(location_name)
     return response
