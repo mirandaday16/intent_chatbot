@@ -1,6 +1,6 @@
 # Travel Buddy: An Intent-Based Travel Chatbot
 
-<p align="center">
+<p align="left">
   <img width="300" src="travel_buddy_preview.png">
 </p>
 
