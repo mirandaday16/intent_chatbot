@@ -1,12 +1,13 @@
-# Intent Chatbot
+# Travel Buddy: An Intent-Based Travel Chatbot
+
+
 
 Created using source code from [Data Flair](https://data-flair.training/blogs/python-chatbot-project/)
 
-This generative chatbot uses an LSTM network to detect user intent and produce an appropriate response. It also has a GUI (in progress).
+This generative chatbot uses an LSTM network to detect user intent and produce an appropriate response, including travel tips and current weather information. It also has a GUI (in progress).
 
 **Goals**:
- - Shift domain of chat bot to travel tips
- - Add more response options
+ - Add time zone information responses
  - Finish customizing GUI
 
-**Primary tools used:** Python, TensorFlow, NLTK, Keras
+**Primary tools used:** Python, TensorFlow, Keras, NLTK, SpaCy, tKinter
