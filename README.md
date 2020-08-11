@@ -1,10 +1,8 @@
 # Travel Buddy: An Intent-Based Travel Chatbot
 
-![Bot_Preview](travel_buddy_preview.png#thumbnail)
-
-img[src*="#thumbnail"] {
-   width:300px;
-}
+<p align="center">
+  <img width="300" src="travel_buddy_preview.png">
+</p>
 
 Created using source code from [Data Flair](https://data-flair.training/blogs/python-chatbot-project/)
 
