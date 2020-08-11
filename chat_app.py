@@ -2,7 +2,9 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 import pickle
 import numpy as np
-from geotext import GeoText
+
+import spacy
+nlp = spacy.load('en_core_web_lg')
 
 from keras.models import load_model
 import json
@@ -63,6 +65,7 @@ def get_response(sentence, intents, intents_json):
     tag = intents[0]['intent']
     intents_list = intents_json['intents']
     if tag == 'weather':
+        print("Tagged: weather")
         response = get_response_weather(sentence)
     else:
         for intent in intents_list:
@@ -75,16 +78,16 @@ def get_response(sentence, intents, intents_json):
 # Get a response to a weather-related query
 # Parameters: a given sentence (string) from the user
 def get_response_weather(sentence):
-    places = GeoText(sentence)
-    if len(places) == 0:
+    labelled_sentence = nlp(sentence)
+    location_name = ""
+    for word in labelled_sentence.ents:
+        # check for geographic places
+        if word.label_ == 'GPE':
+            location_name = word.text
+    if len(location_name) < 1:
         response = "What city do you need the weather forecast for?"
-    elif len(places) > 1:
-        # Make sure location is a city name
-        if len(places.cities) > 0:
-            location_name = places.cities[0]
-            get_weather(location_name)
-        else:
-            response = "What city do you need the weather forecast for?"
+    else:
+        response = get_weather(location_name)
     return response
 
 

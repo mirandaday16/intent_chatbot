@@ -48,41 +48,14 @@
         },
         {"tag": "weather",
          "patterns": ["Open weather module", "Task related to weather", "Weather data", "I want to look up the weather", "Weather forecast" ],
-         "responses": ["What city would you like the weather forecast for?", "Sure! Please choose a city.", "Great! Which city?"],
-         "context": ["weather_city"]
+         "responses": [""],
+         "context": [""]
         },
         {"tag": "time_zone",
          "patterns": ["I want to search for time zone", "What time is it?", "What is the current time?", "Help me with time zone information"],
-         "responses": ["What city would you like the time forecast for?", "Sure! Please choose a city.", "Great! Which city?"],
-         "context": ["time_zone_city"]
-        },
-        {"tag": "weather_city",
-         "patterns": ["Ahmedabad", "Alexandria","Atlanta", "Baghdad", "Bangalore", "Bangkok", "Barcelona", "Beijing",
-           "Belo Horizonte", "Bogota", "Buenos Aires", "Cairo", "Chengdu", "Chennai", "Chicago", "Chongqing", "Dalian",
-           "Dallas", "Dar es Salaam", "Delhi", "Dhaka", "Dongguan", "Foshan", "Fukuoka", "Guadalajara", "Guangzhou",
-           "Hangzhou", "Harbin", "Ho Chi Minh City", "Hong Kong", "Houston", "Hyderabad", "Istanbul", "Jakarta",
-           "Jinan", "Johannesburg", "Karachi", "Khartoum", "Kinshasa", "Kolkata", "Kuala Lumpur", "Lagos", "Lahore",
-           "Lima", "London", "Los Angeles", "Luanda", "Madrid", "Manila", "Mexico City", "Miami", "Moscow", "Mumbai",
-           "Nagoya", "Nanjing", "New York City", "Osaka", "Paris", "Philadelphia", "Pune", "Qingdao", "Rio de Janeiro",
-           "Riyadh", "St. Petersburg", "Santiago", "Sao Paulo", "Seoul", "Shanghai", "Shenyang", "Shenzhen",
-           "Singapore", "Surat", "Suzhou", "Tehran", "Tianjin", "Tokyo", "Toronto", "Washington, D.C.", "Wuhan", "Xian",
-           "Yangon"],
-         "responses": ["Current weather: Sunny, 68F"],
-         "context": [""]
-        },
-        {"tag": "time_zone_city",
-         "patterns": ["Ahmedabad", "Alexandria","Atlanta", "Baghdad", "Bangalore", "Bangkok", "Barcelona", "Beijing",
-           "Belo Horizonte", "Bogota", "Buenos Aires", "Cairo", "Chengdu", "Chennai", "Chicago", "Chongqing", "Dalian",
-           "Dallas", "Dar es Salaam", "Delhi", "Dhaka", "Dongguan", "Foshan", "Fukuoka", "Guadalajara", "Guangzhou",
-           "Hangzhou", "Harbin", "Ho Chi Minh City", "Hong Kong", "Houston", "Hyderabad", "Istanbul", "Jakarta",
-           "Jinan", "Johannesburg", "Karachi", "Khartoum", "Kinshasa", "Kolkata", "Kuala Lumpur", "Lagos", "Lahore",
-           "Lima", "London", "Los Angeles", "Luanda", "Madrid", "Manila", "Mexico City", "Miami", "Moscow", "Mumbai",
-           "Nagoya", "Nanjing", "New York City", "Osaka", "Paris", "Philadelphia", "Pune", "Qingdao", "Rio de Janeiro",
-           "Riyadh", "St. Petersburg", "Santiago", "Sao Paulo", "Seoul", "Shanghai", "Shenyang", "Shenzhen",
-           "Singapore", "Surat", "Suzhou", "Tehran", "Tianjin", "Tokyo", "Toronto", "Washington, D.C.", "Wuhan", "Xian",
-           "Yangon"],
-         "responses": ["Current time: 11:11 a.m."],
+         "responses": [""],
          "context": [""]
         }
+
    ]
 }
