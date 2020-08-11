@@ -17,13 +17,16 @@ def get_weather(location):
     if x["cod"] != "404":
         # store temp data in new variable y
         y = x["main"]
-        current_temp = y["temp"]
-        current_humidity= y["humidity"]
+        current_temp_kelvin = y["temp"]
+        # convert Kelvin temperature to Fahrenheit
+        current_temp = str(round((current_temp_kelvin * 9 / 5) - 459.67))
+        current_humidity = str(y["humidity"])
         # store weather data in new variable z
         z = x["weather"]
         description = z[0]["description"]
-        reply = "Right now in " + location + " the weather is " + description +\
-                " with a temperature of " + current_temp + " degrees and " +\
-                current_humidity + "percent humidity."
+        reply = "Right now in " + location.capitalize() + ", the weather is " + description +\
+                " with a temperature of " + current_temp + "°F and " +\
+                current_humidity + "% humidity."
     else:
         reply = "Sorry, I couldn't find the weather for that location."
+    return reply

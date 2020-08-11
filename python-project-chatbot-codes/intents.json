@@ -46,11 +46,6 @@
            "Everyone should wear sunscreen every day, especially while spending a lot of time outside or visiting sunny locales."],
          "context": [""]
         },
-        {"tag": "weather",
-         "patterns": ["Open weather module", "Task related to weather", "Weather data", "I want to look up the weather", "Weather forecast" ],
-         "responses": [""],
-         "context": [""]
-        },
         {"tag": "time_zone",
          "patterns": ["I want to search for time zone", "What time is it?", "What is the current time?", "Help me with time zone information"],
          "responses": [""],

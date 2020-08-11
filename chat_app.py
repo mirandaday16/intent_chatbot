@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 import spacy
-nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_sm')
 
 from keras.models import load_model
 import json
@@ -62,12 +62,11 @@ def predict_class(sentence, model):
 # Get a random response for the user based on the predicted class
 # Parameters: original input sentence, a list of intent tags and a json file of intents with tags and responses
 def get_response(sentence, intents, intents_json):
-    tag = intents[0]['intent']
-    intents_list = intents_json['intents']
-    if tag == 'weather':
-        print("Tagged: weather")
+    if 'weather' in sentence:
         response = get_response_weather(sentence)
     else:
+        tag = intents[0]['intent']
+        intents_list = intents_json['intents']
         for intent in intents_list:
             if intent['tag'] == tag:
                 response = random.choice(intent['responses'])
