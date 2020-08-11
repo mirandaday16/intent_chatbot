@@ -6,7 +6,10 @@ Created using source code from [Data Flair](https://data-flair.training/blogs/py
 
 This generative chatbot uses an LSTM network to detect user intent and produce an appropriate response, including travel tips and current weather information. It also has a GUI (in progress).
 
+Uses OpenWeather API for current weather information.
+
 **Goals**:
+ - Allow follow-up response for weather queries
  - Add time zone information responses
  - Finish customizing GUI
 
