@@ -45,11 +45,6 @@
            "Remember: Don't beat up your feet! Bring sensible, comfortable, broken-in shoes.", "Don't forget to take pictures!",
            "Everyone should wear sunscreen every day, especially while spending a lot of time outside or visiting sunny locales."],
          "context": [""]
-        },
-        {"tag": "time_zone",
-         "patterns": ["I want to search for time zone", "What time is it?", "What is the current time?", "Help me with time zone information"],
-         "responses": [""],
-         "context": [""]
         }
 
    ]

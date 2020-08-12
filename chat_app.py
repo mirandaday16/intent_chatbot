@@ -65,6 +65,8 @@ def predict_class(sentence, model):
 def get_response(sentence, intents, intents_json):
     if 'weather' in sentence:
         response = get_response_weather(sentence)
+    elif 'time' in sentence:
+        response = get_response_time(sentence)
     else:
         tag = intents[0]['intent']
         intents_list = intents_json['intents']

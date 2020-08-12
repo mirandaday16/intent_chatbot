@@ -3,6 +3,7 @@
 
 import requests
 import json
+from formatting import cap_first_letters
 
 api_key = "vGSiWG7aTLBXuL2W9hPbxMU94u9Vb5"
 base_url = "https://www.amdoren.com/api/timezone.php"
@@ -10,7 +11,9 @@ base_url = "https://www.amdoren.com/api/timezone.php"
 
 # Takes a string entered by the user and converts it into a usable format for the API call
 def get_location_code(location):
-    code = location.replace(" ", "+")
+    code = cap_first_letters(location)
+    code = code.replace(" ", "+")
+    print("code : " + code)
     return code
 
 
@@ -20,26 +23,32 @@ def convert_time_format(timestamp):
     # remove date and seconds
     time = timestamp[11:16]
     # check for military time (PM)
-    if time[:1] > 12:
-        hour = time[:1]
+    if int(time[:2]) > 12:
+        print("afternoon")
+        hour = time[:2]
         converted_hour = int(hour) - 12
-        minutes = time[1:]
+        minutes = time[2:]
         new_time = str(converted_hour) + minutes + " PM"
     else:
+        print("morning")
         new_time = time + " AM"
-    return new_time
+    return str(new_time)
 
 
 # Gets local time in user-entered location using API
 # Location should be a city
 def get_time(location):
     location_code = get_location_code(location)
-    complete_url = base_url + "?key=" + api_key + "&format=xml&by=zone&zone=" + location_code
+    complete_url = base_url + "?api_key=" + api_key + "&loc=" + location_code
     response = requests.get(complete_url)
     # JSON method of response object
     x = response.json()
-    if x["error"] == "0":
-    # store time data
-    time = x["time"]
-    converted_time = convert_time_format(time)
-    response = "Right now in " + location.capitalize() + " it is " + converted_time + "."
+    if x["error"] == 0:
+        # store time data
+        time = x["time"]
+        converted_time = convert_time_format(time)
+        reply = "Right now in " + cap_first_letters(location) + " it is " + converted_time + "."
+    else:
+        print(x)
+        reply = "Sorry, I couldn't find the time for that location."
+    return reply

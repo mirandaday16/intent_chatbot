@@ -3,6 +3,7 @@
 
 import requests
 import json
+from formatting import cap_first_letters
 
 api_key = "4b6a47117e2d2f39c4bc2ef32ae03abc"
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -24,7 +25,7 @@ def get_weather(location):
         # store weather data in new variable z
         z = x["weather"]
         description = z[0]["description"]
-        reply = "Right now in " + location.capitalize() + ", the weather is " + description +\
+        reply = "Right now in " + cap_first_letters(location) + ", the weather is " + description +\
                 " with a temperature of " + current_temp + "°F and " +\
                 current_humidity + "% humidity."
     else:
