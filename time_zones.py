@@ -13,7 +13,6 @@ base_url = "https://www.amdoren.com/api/timezone.php"
 def get_location_code(location):
     code = cap_first_letters(location)
     code = code.replace(" ", "+")
-    print("code : " + code)
     return code
 
 
@@ -24,13 +23,11 @@ def convert_time_format(timestamp):
     time = timestamp[11:16]
     # check for military time (PM)
     if int(time[:2]) > 12:
-        print("afternoon")
         hour = time[:2]
         converted_hour = int(hour) - 12
         minutes = time[2:]
         new_time = str(converted_hour) + minutes + " PM"
     else:
-        print("morning")
         new_time = time + " AM"
     return str(new_time)
 
