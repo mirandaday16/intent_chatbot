@@ -11,6 +11,7 @@ import json
 import random
 
 from weather import get_weather
+from time_zones import get_time
 
 lemmatizer = WordNetLemmatizer()
 model = load_model('chatbot_model.h5')
@@ -88,6 +89,23 @@ def get_response_weather(sentence):
         # TODO: Figure out how to connect following user response
     else:
         response = get_weather(location_name)
+    return response
+
+
+# Get a response to a time-related query
+# Parameters: a given sentence (string) from the user
+def get_response_time(sentence):
+    labelled_sentence = nlp(sentence)
+    location_name = ""
+    for word in labelled_sentence.ents:
+        # check for geographic places
+        if word.label_ == 'GPE':
+            location_name = word.text
+    if len(location_name) < 1:
+        response = "What city do you need the time for?"
+        # TODO: Figure out how to connect following user response
+    else:
+        response = get_time(location_name)
     return response
 
 
