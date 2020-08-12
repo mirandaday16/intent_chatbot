@@ -8,6 +8,13 @@ This generative chatbot uses an LSTM network to detect user intent and produce a
 
 Uses OpenWeather API for current weather information and Amdoren API for time zone information.
 
+
+
+
+
+
+
+
 **Goals**:
  - Allow follow-up response for weather and time queries
  - Finish customizing GUI
