@@ -25,7 +25,7 @@ base.geometry('400x500')
 base.resizable(width = FALSE, height = FALSE)
 
 # Chat window
-chat_log = Text(base, bd = 0, bg = '#F7F7F7', height = '8', width = '50', font = 'Helvetica')
+chat_log = Text(base, bd = 0, bg = '#F7F7F7', height = '8', width = '50', font = 'Helvetica', wrap='word')
 
 chat_log.config(state = DISABLED)
 
@@ -38,7 +38,7 @@ send_button = Button(base, font = ('Helvetica', 16, 'bold'), text = 'Send', widt
                      bg = 'blue', activebackground = 'green', fg = '#F7F7F7', command = send)
 
 # Add message entry box
-entry_box = Text(base, bd = 0, bg = "#F7F7F7", width = '29', height = '5', font = 'Helvetica')
+entry_box = Text(base, bd = 0, bg = "#F7F7F7", width = '29', height = '5', font = 'Helvetica', wrap='word')
 entry_box.bind("<Return>", send)
 
 # Combine all components
